@@ -1,0 +1,7 @@
+.task form {
+  margin-bottom: 0;
+}
+.task input[type='checkbox'] {
+  height: 30px;
+  width: 30px;
+}

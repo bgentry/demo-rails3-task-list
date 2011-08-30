@@ -1,24 +1,43 @@
-<h1>Listing tasks</h1>
+<div class="container">
 
-<table id="task_list">
-  <tr>
-    <th>Name</th>
-    <th>Finished?</th>
-    <th></th>
-  </tr>
+  <div class="row">
+    <div class="span10 columns">
+      <h1>Tasks</h1>
 
-  <%= render @tasks %>
-</table>
+      <table id="task_list" class="zebra-striped">
+        <tr>
+          <th>Name</th>
+          <th>Finished?</th>
+          <th></th>
+        </tr>
 
-<br />
+        <%= render @tasks %>
+      </table>
 
-<%= form_for Task.new, :html => { :remote => true } do |f| %>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-  <%= f.label :finished %><br />
-  <%= f.check_box :finished %>
-  <%= f.submit %>
-<% end %>
+      <br />
+
+      <%= form_for Task.new, :html => { :remote => true, :style => 'margin-bottom:0;' } do |f| %>
+        <fieldset>
+          <legend>New Task</legend>
+          <div class="clearfix">
+            <%= f.label :name %>
+            <div class="input">
+              <div class="input-append">
+                <%= f.text_field :name, :class => "large", :id => 'new-task-text' %>
+                <label class="add-on">
+                  <%= f.check_box :finished %>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit :class => 'btn primary' %>
+          </div>
+        </fieldset>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
   $('.task_finished').live('change', function() {
