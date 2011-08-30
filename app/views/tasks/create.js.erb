@@ -1,3 +1,4 @@
 $("#new-task-text").val('');
+$("#new-task-finished").removeAttr("checked");
 $("#task_list").append("<%= escape_javascript(render(@task)) %>");
 $("#task_<%= @task.id %>").effect("highlight", {}, 2000);
