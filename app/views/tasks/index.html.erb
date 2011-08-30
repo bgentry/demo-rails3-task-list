@@ -17,23 +17,25 @@
       <br />
 
       <%= form_for Task.new, :html => { :remote => true, :style => 'margin-bottom:0;' } do |f| %>
-        <fieldset>
-          <legend>New Task</legend>
-          <div class="clearfix">
-            <%= f.label :name, :class => 'large' %>
-            <div class="input">
-              <div class="input-append">
-                <%= f.text_field :name, :class => "large", :id => 'new-task-text' %>
-                <label class="add-on">
-                  <%= f.check_box :finished, :id => 'new-task-finished' %>
-                </label>
+        <div class="well">
+          <fieldset>
+            <legend>New Task</legend>
+            <div class="clearfix">
+              <%= f.label :name, :class => 'large' %>
+              <div class="input">
+                <div class="input-append">
+                  <%= f.text_field :name, :class => "large", :id => 'new-task-text' %>
+                  <label class="add-on">
+                    <%= f.check_box :finished, :id => 'new-task-finished' %>
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="actions">
-            <%= f.submit :class => 'btn primary' %>
-          </div>
-        </fieldset>
+            <div class="actions">
+              <%= f.submit :class => 'btn primary' %>
+            </div>
+          </fieldset>
+        </div>
       <% end %>
     </div>
   </div>
