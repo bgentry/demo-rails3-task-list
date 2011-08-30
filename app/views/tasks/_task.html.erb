@@ -1,0 +1,9 @@
+<tr id="task_<%= task.id %>">
+  <td><%= task.name %></td>
+  <td>
+    <%= form_for task, :html => { :method => :put, :remote => true } do |f| %>
+      <%= f.check_box :finished, :class => "task_finished" %>
+    <% end %>
+  </td>
+  <td><%= link_to 'X', task, :method => :delete %></td>
+</tr>

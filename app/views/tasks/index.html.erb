@@ -1,0 +1,27 @@
+<h1>Listing tasks</h1>
+
+<table id="task_list">
+  <tr>
+    <th>Name</th>
+    <th>Finished?</th>
+    <th></th>
+  </tr>
+
+  <%= render @tasks %>
+</table>
+
+<br />
+
+<%= form_for Task.new, :html => { :remote => true } do |f| %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+  <%= f.label :finished %><br />
+  <%= f.check_box :finished %>
+  <%= f.submit %>
+<% end %>
+
+<script type="text/javascript">
+  $('.task_finished').live('change', function() {
+    $(this).parents('form:first').submit();
+  });
+</script>

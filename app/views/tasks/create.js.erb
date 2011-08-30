@@ -1,0 +1,2 @@
+$("#task_list").append("<%= escape_javascript(render(@task)) %>");
+$("#task_<%= @task.id %>").effect("highlight", {}, 2000);
