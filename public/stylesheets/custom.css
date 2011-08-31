@@ -8,3 +8,9 @@
 td {
   font-size: 20px;
 }
+.delete-task {
+  opacity: 0.0;
+}
+.task:hover .delete-task {
+  opacity: 1;
+}
